@@ -365,10 +365,10 @@ public abstract class JCVideoPlayer extends FrameLayout implements JCMediaPlayer
     }
 
     public void startProgressTimer() {
-        cancelProgressTimer();
-        UPDATE_PROGRESS_TIMER = new Timer();
-        mProgressTimerTask = new ProgressTimerTask();
-        UPDATE_PROGRESS_TIMER.schedule(mProgressTimerTask, 0, 300);
+//        cancelProgressTimer();
+//        UPDATE_PROGRESS_TIMER = new Timer();
+//        mProgressTimerTask = new ProgressTimerTask();
+//        UPDATE_PROGRESS_TIMER.schedule(mProgressTimerTask, 0, 300);
     }
 
     public void cancelProgressTimer() {
@@ -740,13 +740,13 @@ public abstract class JCVideoPlayer extends FrameLayout implements JCMediaPlayer
     }
 
     public void setProgressAndTime(int progress, int secProgress, int currentTime, int totalTime) {
-        if (!mTouchingProgressBar) {
-            if (progress != 0) progressBar.setProgress(progress);
-        }
-        if (secProgress > 95) secProgress = 100;
-        if (secProgress != 0) progressBar.setSecondaryProgress(secProgress);
-        if (currentTime != 0) currentTimeTextView.setText(JCUtils.stringForTime(currentTime));
-        totalTimeTextView.setText(JCUtils.stringForTime(totalTime));
+//        if (!mTouchingProgressBar) {
+//            if (progress != 0) progressBar.setProgress(progress);
+//        }
+//        if (secProgress > 95) secProgress = 100;
+//        if (secProgress != 0) progressBar.setSecondaryProgress(secProgress);
+//        if (currentTime != 0) currentTimeTextView.setText(JCUtils.stringForTime(currentTime));
+//        totalTimeTextView.setText(JCUtils.stringForTime(totalTime));
     }
 
     public void resetProgressAndTime() {

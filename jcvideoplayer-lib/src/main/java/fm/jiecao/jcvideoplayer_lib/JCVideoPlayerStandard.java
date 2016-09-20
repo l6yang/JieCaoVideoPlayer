@@ -751,10 +751,10 @@ public class JCVideoPlayerStandard extends JCVideoPlayer {
     }
 
     public void startDismissControlViewTimer() {
-        cancelDismissControlViewTimer();
-        DISMISS_CONTROL_VIEW_TIMER = new Timer();
-        mDismissControlViewTimerTask = new DismissControlViewTimerTask();
-        DISMISS_CONTROL_VIEW_TIMER.schedule(mDismissControlViewTimerTask, 2500);
+//        cancelDismissControlViewTimer();
+//        DISMISS_CONTROL_VIEW_TIMER = new Timer();
+//        mDismissControlViewTimerTask = new DismissControlViewTimerTask();
+//        DISMISS_CONTROL_VIEW_TIMER.schedule(mDismissControlViewTimerTask, 2500);
     }
 
     public void cancelDismissControlViewTimer() {
