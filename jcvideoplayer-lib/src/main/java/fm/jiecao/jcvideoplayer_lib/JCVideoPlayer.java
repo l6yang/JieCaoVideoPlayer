@@ -372,7 +372,8 @@ public abstract class JCVideoPlayer extends FrameLayout implements View.OnClickL
     }
 
     public void setUiWitStateAndScreen(int state) {
-        currentState = state;
+        if (state != CURRENT_STATE_AUTO_COMPLETE)//logforitemclickbug: 如果添加这行代码，在自动播放完成之后第一次点击item不toast，再次点击item才会toast
+            currentState = state;
         switch (currentState) {
             case CURRENT_STATE_NORMAL:
                 cancelProgressTimer();
@@ -391,7 +392,7 @@ public abstract class JCVideoPlayer extends FrameLayout implements View.OnClickL
             case CURRENT_STATE_ERROR:
                 cancelProgressTimer();
                 break;
-            case CURRENT_STATE_AUTO_COMPLETE:
+            case CURRENT_STATE_AUTO_COMPLETE:////logforitemclickbug: 如果注释掉下面这三行代码，无济于事
                 cancelProgressTimer();
                 progressBar.setProgress(100);
                 currentTimeTextView.setText(totalTimeTextView.getText());
@@ -454,7 +455,7 @@ public abstract class JCVideoPlayer extends FrameLayout implements View.OnClickL
         dismissVolumeDialog();
         dismissProgressDialog();
         dismissBrightnessDialog();
-        setUiWitStateAndScreen(CURRENT_STATE_AUTO_COMPLETE);
+        setUiWitStateAndScreen(CURRENT_STATE_AUTO_COMPLETE);//logforitemclickbug: 如果只注释掉这行代码，则没有bug
 
         if (currentScreen == SCREEN_WINDOW_FULLSCREEN) {
             backPress();

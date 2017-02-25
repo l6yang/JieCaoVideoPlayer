@@ -8,5 +8,8 @@
         android:id="@+id/videoplayer"
         android:layout_width="match_parent"
         android:layout_height="200dp" />
-
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#00ff00"/>
 </LinearLayout>

@@ -124,7 +124,7 @@ public class JCVideoPlayerStandard extends JCVideoPlayer {
             case CURRENT_STATE_ERROR:
                 changeUiToError();
                 break;
-            case CURRENT_STATE_AUTO_COMPLETE:
+            case CURRENT_STATE_AUTO_COMPLETE://logforitemclickbug: 如果只注释下面这三行代码，无济于事
                 changeUiToCompleteShow();
                 cancelDismissControlViewTimer();
                 bottomProgressBar.setProgress(100);
