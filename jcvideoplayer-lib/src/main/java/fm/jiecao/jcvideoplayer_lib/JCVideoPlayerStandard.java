@@ -199,6 +199,9 @@ public class JCVideoPlayerStandard extends JCVideoPlayer {
         }
     }
 
+    public void lockScreen(boolean lock) {
+
+    }
 
     @Override
     public void showWifiDialog() {
